@@ -1,4 +1,4 @@
-import {RestClient} from '../rest_client';
+import { RestClient } from "../rest_client";
 
 export class StoreController {
   private restClient: RestClient;
@@ -8,6 +8,6 @@ export class StoreController {
   }
 
   async list() {
-    return this.restClient.get('/store/websites');
+    return this.restClient.get("/store/websites");
   }
 }

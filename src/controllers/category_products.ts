@@ -1,6 +1,6 @@
-import util from 'util';
+import util from "util";
 // eslint-disable-next-line no-unused-vars
-import {RestClient} from '../rest_client';
+import { RestClient } from "../rest_client";
 
 export class CategoryProductController {
   private restClient: RestClient;
@@ -10,8 +10,7 @@ export class CategoryProductController {
   }
 
   async list(categoryId: any) {
-    const endpointUrl = util.format('/categories/%d/products', categoryId);
+    const endpointUrl = util.format("/categories/%d/products", categoryId);
     return this.restClient.get(endpointUrl);
   }
 }
-

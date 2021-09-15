@@ -1,6 +1,6 @@
 {
   "name": "magento2-js",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A Node.JS module, which provides an object oriented wrapper for the Magento v2 Rest API.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -22,7 +22,8 @@
   "scripts": {
     "test": "test",
     "lint": "eslint --fix ./src/**/*.ts",
-    "build": "tsc"
+    "build": "rimraf lib && tsc",
+    "dev": "tsc -w"
   },
   "dependencies": {
     "@types/node": "^16.4.3",
@@ -38,7 +39,6 @@
     "@typescript-eslint/parser": "^4.28.5",
     "chai": "^3.5.0",
     "eslint": "^7.31.0",
-    "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
     "mocha": "^2.4.5",

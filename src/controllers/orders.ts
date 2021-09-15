@@ -1,4 +1,4 @@
-import {RestClient} from '../rest_client';
+import { RestClient } from "../rest_client";
 
 export class OrderController {
   private restClient: RestClient;
@@ -15,28 +15,28 @@ export class OrderController {
    * @return {Promise<{increment_id: String}>}
    */
   async incrementIdById(orderId: string) {
-    return this.restClient.get('/orders/' + orderId + '?fields=increment_id');
+    return this.restClient.get("/orders/" + orderId + "?fields=increment_id");
   }
 
   async pending() {
-    return this.restClient.get('/orders/pending');
+    return this.restClient.get("/orders/pending");
   }
   async searchOrderByOrderId(orderId: string) {
     return this.restClient.get(
-        '/orders/?searchCriteria[filter_groups][0][filters][0][field]=entity_id&' +
-        'searchCriteria[filter_groups][0][filters][0][value]=' +
+      "/orders/?searchCriteria[filter_groups][0][filters][0][field]=entity_id&" +
+        "searchCriteria[filter_groups][0][filters][0][value]=" +
         orderId +
-        '&' +
-        'searchCriteria[filter_groups][0][filters][0][condition_type]=eq',
+        "&" +
+        "searchCriteria[filter_groups][0][filters][0][condition_type]=eq"
     );
   }
   async searchOrderByIncrementId(increment_id: string) {
     return this.restClient.get(
-        '/orders/?searchCriteria[filter_groups][0][filters][0][field]=increment_id&' +
-        'searchCriteria[filter_groups][0][filters][0][value]=' +
+      "/orders/?searchCriteria[filter_groups][0][filters][0][field]=increment_id&" +
+        "searchCriteria[filter_groups][0][filters][0][value]=" +
         increment_id +
-        '&' +
-        'searchCriteria[filter_groups][0][filters][0][condition_type]=eq',
+        "&" +
+        "searchCriteria[filter_groups][0][filters][0][condition_type]=eq"
     );
   }
 }

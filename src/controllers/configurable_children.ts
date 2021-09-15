@@ -1,5 +1,5 @@
-import util from 'util';
-import {RestClient} from '../rest_client';
+import util from "util";
+import { RestClient } from "../rest_client";
 
 export class ConfigurableChildrenController {
   private restClient: RestClient;
@@ -9,7 +9,10 @@ export class ConfigurableChildrenController {
   }
 
   async list(sku: string | number | boolean): Promise<any> {
-    const endpointUrl = util.format('/configurable-products/%s/children', encodeURIComponent(sku));
+    const endpointUrl = util.format(
+      "/configurable-products/%s/children",
+      encodeURIComponent(sku)
+    );
     return this.restClient.get(endpointUrl);
   }
 }
